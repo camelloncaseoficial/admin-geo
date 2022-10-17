@@ -1,0 +1,140 @@
+/*
+Template Name: Admin pro Admin
+Author: Wrappixel
+Email: niravjoshi87@gmail.com
+File: scss
+*/
+/*
+Template Name: Admin Pro Admin
+Author: Wrappixel
+Email: niravjoshi87@gmail.com
+File: scss
+*/
+/*Theme Colors*/
+/*bootstrap Color*/
+/*Light colors*/
+/*Normal Color*/
+/*Extra Variable*/
+/*******************
+google map Page
+******************/
+.map,
+.map-panaroma {
+    height: 500px;
+}
+
+.map,
+.map-panaroma {
+    height: 500px;
+    background: #e9edf2;
+    border-radius: 3px;
+}
+
+.map-overlay {
+    display: block;
+    text-align: left;
+    color: #000000;
+    font-size: 16px;
+    line-height: 40px;
+    background: #ffffff;
+    border-radius: 4px;
+    padding: 10px 20px;
+}
+
+.map-overlay-upper-left {
+    color: #000000;
+    font-size: 18px;
+    background: #ffffff;
+    border-radius: 3px;
+    position: absolute;
+    padding: 10px;
+    top: 11%;
+    left: 3%;
+    
+}
+
+.map-overlay-fit {
+    color: #000000;
+    font-size: 18px;
+    background: #ffffff;
+    border-radius: 3px;
+    position: absolute;
+    padding: 10px;
+    top: 60px; 
+    left: 25px;
+    
+}
+
+.map-overlay_arrow {
+    left: 50%;
+    margin-left: -16px;
+    width: 0;
+    height: 0;
+    position: absolute;
+}
+
+.map-overlay_arrow.above {
+    bottom: -15px;
+    border-left: 16px solid transparent;
+    border-right: 16px solid transparent;
+    border-top: 16px solid #745af2;
+}
+
+.map-overlay_arrow.below {
+    top: -15px;
+    border-left: 16px solid transparent;
+    border-right: 16px solid transparent;
+    border-bottom: 16px solid #745af2;
+}
+
+/*******************
+  vector map Page
+  ******************/
+.jvectormap-zoomin,
+.jvectormap-zoomout {
+    width: 10px;
+    height: 10px;
+    line-height: 10px;
+}
+
+.jvectormap-zoomout {
+    top: 40px;
+}
+
+.legend {
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 3px;
+    left: 10px;
+    bottom: 15px;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+    color: #000 ;
+    font: 12px/20px 'Helvetica Neue', Arial, Helvetica, sans-serif;
+    padding: 15px;
+    position: absolute;
+    z-index: 1;
+}
+.legend h4 {
+    margin: 0 0 10px;
+}
+.legend div span {
+    border-radius: 50%;
+    display: inline-block;
+    height: 10px;
+    margin-right: 5px;
+    width: 10px;
+}
+
+.legend-key {
+    border: 1px solid black;
+    display: inline-block;
+    border-radius: 20%;
+    width: 10px;
+    height: 10px;
+    margin-left: 5px;
+  }
+  
+  .legend-value {
+    display: inline-block;
+    margin-left: 5px;
+  }
+  

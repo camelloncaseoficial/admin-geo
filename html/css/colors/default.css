@@ -1,0 +1,105 @@
+/*
+Template Name: Admin Pro Admin
+Author: Wrappixel
+Email: niravjoshi87@gmail.com
+File: scss
+*/
+/*
+Template Name: Admin Pro Admin
+Author: Wrappixel
+Email: niravjoshi87@gmail.com
+File: scss
+*/
+/*Theme Colors*/
+/*bootstrap Color*/
+/*Light colors*/
+/*Normal Color*/
+/*Extra Variable*/
+/*******************
+/*Top bar
+*******************/
+.topbar {
+  background: #ffffff; }
+  .topbar .navbar-header {
+    background: #ffffff; }
+  .topbar .top-navbar .navbar-header .navbar-brand .light-logo {
+    display: none;
+    color: rgba(0, 0, 0, 0.7); }
+  .topbar .navbar-light .navbar-nav .nav-item > a.nav-link {
+    color: rgba(0, 0, 0, 0.7) !important; }
+    .topbar .navbar-light .navbar-nav .nav-item > a.nav-link:hover, .topbar .navbar-light .navbar-nav .nav-item > a.nav-link:focus {
+      color: black !important; }
+
+/*******************
+/*General Elements
+*******************/
+a.link:hover, a.link:focus {
+  color: #135CAC !important; }
+
+.bg-theme {
+  background-color: #135CAC !important; }
+
+.pagination > .active > a,
+.pagination > .active > span,
+.pagination > .active > a:hover,
+.pagination > .active > span:hover,
+.pagination > .active > a:focus,
+.pagination > .active > span:focus {
+  background-color: #135CAC;
+  border-color: #135CAC; }
+
+.right-sidebar .rpanel-title {
+  background: #135CAC; }
+
+.stylish-table tbody tr:hover, .stylish-table tbody tr.active {
+  border-left: 4px solid #135CAC; }
+
+.text-themecolor {
+  color: #135CAC !important; }
+
+.profile-tab li a.nav-link.active,
+.customtab li a.nav-link.active {
+  border-bottom: 2px solid #135CAC;
+  color: #135CAC; }
+
+.profile-tab li a.nav-link:hover,
+.customtab li a.nav-link:hover {
+  color: #135CAC; }
+
+/*******************
+/*Buttons
+*******************/
+.btn-themecolor,
+.btn-themecolor.disabled {
+  background: #135CAC;
+  color: #ffffff;
+  border: 1px solid #135CAC; }
+  .btn-themecolor:hover,
+  .btn-themecolor.disabled:hover {
+    background: #135CAC;
+    opacity: 0.7;
+    border: 1px solid #135CAC; }
+  .btn-themecolor.active, .btn-themecolor:focus,
+  .btn-themecolor.disabled.active,
+  .btn-themecolor.disabled:focus {
+    background: #028ee1; }
+
+/*******************
+/*sidebar navigation
+*******************/
+.label-themecolor {
+  background: #135CAC; }
+
+.sidebar-nav > ul > li.active > a {
+  color: #135CAC;
+  border-color: #135CAC; }
+  .sidebar-nav > ul > li.active > a i {
+    color: #135CAC; }
+
+.sidebar-nav ul li a.active, .sidebar-nav ul li a:hover {
+  color: #135CAC; }
+  .sidebar-nav ul li a.active i, .sidebar-nav ul li a:hover i {
+    color: #135CAC; }
+
+.sidebar-nav > ul > li > a i {
+  color: #787f91; }
