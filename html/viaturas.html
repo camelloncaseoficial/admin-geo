@@ -12,13 +12,22 @@
         content="AdminWrap Lite is powerful and clean admin dashboard template, inpired from Bootstrap Framework">
     <meta name="robots" content="noindex,nofollow">
     <title>AdminGeo Lite</title>
-    <link rel="canonical" href="https://www.wrappixel.com/templates/adminwrap-lite/" />
     <!-- Favicon icon -->
     <link rel="icon" type="image/png" sizes="16x16" href="../assets/images/favicon.png">
     <!-- Bootstrap Core CSS -->
+    <link href="css/reset.css" rel="stylesheet">
     <link href="../assets/node_modules/bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <!-- Custom CSS -->
+    <link href="../assets/node_modules/perfect-scrollbar/css/perfect-scrollbar.css" rel="stylesheet">
+    <!-- This page CSS -->
+    <!-- chartist CSS -->
+    <link href="../assets/node_modules/morrisjs/morris.css" rel="stylesheet">
+    <!--c3 CSS -->
+    <link href="../assets/node_modules/c3-master/c3.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
     <link href="css/style.css" rel="stylesheet">
+    <!-- Dashboard 1 Page CSS -->
+    <link href="css/pages/dashboard1.css" rel="stylesheet">
     <!-- You can change the theme colors from here -->
     <link href="css/colors/default.css" id="theme" rel="stylesheet">
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -99,13 +108,13 @@
                         <!-- ============================================================== -->
                         <!-- Profile -->
                         <!-- ============================================================== -->
-                        <li class="nav-item dropdown u-pro">
+                        <!-- <li class="nav-item dropdown u-pro">
                             <a class="nav-link dropdown-toggle waves-effect waves-dark profile-pic" href=""
                                 data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img
                                     src="../assets/images/users/1.jpg" alt="user" class="" /> <span
                                     class="hidden-md-down">Mark Sanders &nbsp;</span> </a>
                             <ul class="dropdown-menu" aria-labelledby="navbarDropdown"></ul>
-                        </li>
+                        </li> -->
                     </ul>
                 </div>
             </nav>
@@ -125,14 +134,21 @@
                         <li> <a class="waves-effect waves-dark" href="../index.html" aria-expanded="false"><i
                                     class="fa fa-tachometer"></i><span class="hide-menu">Dashboard</span></a>
                         </li>
-                        <li> <a class="waves-effect waves-dark" href="table-basic.html" aria-expanded="false"><i
+                        <li> <a class="waves-effect waves-dark" href="pessoal.html" aria-expanded="false"><i
                                     class="fa fa-user-circle-o"></i><span class="hide-menu">Pessoal</span></a>
                         </li>
                         <li> <a class="waves-effect waves-dark" href="fatos-observados.html" aria-expanded="false"><i
                                     class="fa fa-newspaper-o"></i><span class="hide-menu">Fatos observados</span></a>
                         </li>
-                        <li> <a class="waves-effect waves-dark" href="maps.html" aria-expanded="false"><i
-                                    class="fa fa-globe"></i><span class="hide-menu">Mapas</span></a>
+                        <li>
+                            <a class="waves-effect waves-dark dropdown-btn" aria-expanded="false"><i
+                                    class="fa fa-globe"></i><span class="hide-menu">Mapas</span><i
+                                    class="fa fa-caret-down"></i></a>
+                            <div class="dropdown-container">
+                                <a href="maps.html#reambulacao-map">Reambulação</a>
+                                <a href="maps.html#review-map">Revisão</a>
+                                <a href="maps.html#correction-map">Correção</a>
+                            </div>
                         </li>
                         <li> <a class="waves-effect waves-dark" href="suprimento.html" aria-expanded="false"><i
                                     class="fa fa-bookmark-o"></i><span class="hide-menu">Suprimento</span></a>
@@ -176,10 +192,514 @@
                 <!-- Start Page Content -->
                 <!-- ============================================================== -->
                 <div class="row">
-                    <div class="col-12">
-                        <div class="card">
+                    <div class="col-lg-12 d-flex align-items-stretch">
+                        <div class="card w-100">
                             <div class="card-body">
-                                This is some text within a card block.
+                                <div class="d-flex">
+                                    <div>
+                                        <h5 class="card-title">Semana 04 - 03 a 07 de outubro</h5>
+                                    </div>
+                                    <!-- <div class="ms-auto">
+                                        <select class="form-select b-0">
+                                            <option selected="">January</option>
+                                            <option value="1">February</option>
+                                            <option value="2">March</option>
+                                            <option value="3">April</option>
+                                        </select>
+                                    </div> -->
+                                </div>
+                                <div class="table-responsive mt-3 no-wrap">
+                                    <table class="table vm no-th-brd pro-of-month">
+                                        <thead>
+                                            <tr>
+                                                <th colspan="2">Status</th>
+                                                <th>Pertencimento</th>
+                                                <th>Motivo</th>
+                                                <th>Ação</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td style="width:50px;"><span class="round"><i class="fa fa-thumbs-o-down"></i></span></td>
+                                                <td>
+                                                    <h6>NON 6916</h6><small class="text-muted">L200</small>
+                                                </td>
+                                                <td>2° CGEO</td>
+                                                <td>Mangote intermediário do intercooler rasgado, solenoide da turbina</td>
+                                                <td>Foi trocado o mangote do intercooler, e será providenciado o solenoide da turbina na próxima semana.</td>
+                                            </tr>
+                                            <tr>
+                                                <td style="width:50px;"><span class="round"><i class="fa fa-thumbs-o-up"></i></span></td>
+                                                <td>
+                                                    <h6>NON 7086</h6><small class="text-muted">L200</small>
+                                                </td>
+                                                <td>2° CGEO</td>
+                                                <td>-</td>
+                                                <td>-</td>
+                                            </tr>
+                                            <tr>
+                                                <td style="width:50px;"><span class="round round-danger" ><i class="fa fa-thumbs-o-up"></i></span></td>
+                                                <td>
+                                                    <h6>NON 7096</h6><small class="text-muted">L200</small>
+                                                </td>
+                                                <td>2° CGEO</td>
+                                                <td>-</td>
+                                                <td>-</td>
+                                            </tr>
+                                            <tr>
+                                                <td style="width:50px;"><span class="round"><i class="fa fa-thumbs-o-down"></i></span></td>
+                                                <td>
+                                                    <h6>OYQ 0806</h6><small class="text-muted">L200</small>
+                                                </td>
+                                                <td>2° CGEO</td>
+                                                <td>Embreagem ruim</td>
+                                                <td>Já foi agendado a troca do kit embreagem, cilindro mestre e auxiliar para a próxima segunda-feira.</td>
+                                            </tr>
+                                            <tr>
+                                                <td style="width:50px;"><span class="round"><i class="fa fa-thumbs-o-up"></i></span></td>
+                                                <td>
+                                                    <h6>PCP 5475</h6><small class="text-muted">L200</small>
+                                                </td>
+                                                <td>3° CGEO</td>
+                                                <td>-</td>
+                                                <td>-</td>
+                                            </tr>
+                                            <tr>
+                                                <td style="width:50px;"><span class="round round-danger"><i class="fa fa-thumbs-o-up"></i></span></td>
+                                                <td>
+                                                    <h6>PCP 5745</h6><small class="text-muted">L200</small>
+                                                </td>
+                                                <td>3° CGEO</td>
+                                                <td>-</td>
+                                                <td>-</td>
+                                            </tr>
+                                            <tr>
+                                                <td style="width:50px;"><span class="round"><i class="fa fa-thumbs-o-up"></i></span></td>
+                                                <td>
+                                                    <h6>RDM5G43</h6><small class="text-muted">Toro</small>
+                                                </td>
+                                                <td>Alugada</td>
+                                                <td>-</td>
+                                                <td>-</td>
+                                            </tr>
+                                            <tr>
+                                                <td style="width:50px;"><span class="round"><i class="fa fa-thumbs-o-up"></i></span></td>
+                                                <td>
+                                                    <h6>RDM3C05</h6><small class="text-muted">Toro</small>
+                                                </td>
+                                                <td>Alugada</td>
+                                                <td>-</td>
+                                                <td>-</td>
+                                            </tr>
+                                            <tr>
+                                                <td style="width:50px;"><span class="round"><i class="fa fa-thumbs-o-up"></i></span></td>
+                                                <td>
+                                                    <h6>RDM1F88</h6><small class="text-muted">Toro</small>
+                                                </td>
+                                                <td>Alugada</td>
+                                                <td>-</td>
+                                                <td>-</td>
+                                            </tr>
+                                            <tr>
+                                                <td style="width:50px;"><span class="round"><i class="fa fa-thumbs-o-up"></i></span></td>
+                                                <td>
+                                                    <h6>RDMG1D27</h6><small class="text-muted">Toro</small>
+                                                </td>
+                                                <td>Alugada</td>
+                                                <td>-</td>
+                                                <td>-</td>
+                                            </tr>
+                                            <tr>
+                                                <td style="width:50px;"><span class="round"><i class="fa fa-thumbs-o-up"></i></span></td>
+                                                <td>
+                                                    <h6>RDM8I61</h6><small class="text-muted">Toro</small>
+                                                </td>
+                                                <td>Alugada</td>
+                                                <td>-</td>
+                                                <td>-</td>
+                                            </tr>
+                                            <tr>
+                                                <td style="width:50px;"><span class="round"><i class="fa fa-thumbs-o-down"></i></span></td>
+                                                <td>
+                                                    <h6>RDG1C72</h6><small class="text-muted">Toro</small>
+                                                </td>
+                                                <td>Alugada</td>
+                                                <td>Problemas na suspensão</td>
+                                                <td>Seguro acionado</td>
+                                            </tr>
+                                            <tr>
+                                                <td style="width:50px;"><span class="round"><i class="fa fa-thumbs-o-up"></i></span></td>
+                                                <td>
+                                                    <h6>RDM3E80</h6><small class="text-muted">Toro</small>
+                                                </td>
+                                                <td>Alugada</td>
+                                                <td>-</td>
+                                                <td>-</td>
+                                            </tr>
+                                            <tr>
+                                                <td style="width:50px;"><span class="round"><i class="fa fa-thumbs-o-up"></i></span></td>
+                                                <td>
+                                                    <h6>JJU 5141</h6><small class="text-muted">Van Boxer</small>
+                                                </td>
+                                                <td>3° CGEO</td>
+                                                <td>-</td>
+                                                <td>-</td>
+                                            </tr>
+                                            <tr>
+                                                <td style="width:50px;"><span class="round"><i class="fa fa-thumbs-o-up"></i></span></td>
+                                                <td>
+                                                    <h6>KII 4222</h6><small class="text-muted">Van Ducato</small>
+                                                </td>
+                                                <td>2° CGEO</td>
+                                                <td>-</td>
+                                                <td>-</td>
+                                            </tr>
+                                            
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-12 d-flex align-items-stretch">
+                        <div class="card w-100">
+                            <div class="card-body">
+                                <div class="d-flex">
+                                    <div>
+                                        <h5 class="card-title">Semana 03 - 03 a 07 de outubro</h5>
+                                    </div>
+                                    <!-- <div class="ms-auto">
+                                        <select class="form-select b-0">
+                                            <option selected="">January</option>
+                                            <option value="1">February</option>
+                                            <option value="2">March</option>
+                                            <option value="3">April</option>
+                                        </select>
+                                    </div> -->
+                                </div>
+                                <div class="table-responsive mt-3 no-wrap">
+                                    <table class="table vm no-th-brd pro-of-month">
+                                        <thead>
+                                            <tr>
+                                                <th colspan="2">Status</th>
+                                                <th>Pertencimento</th>
+                                                <th>Motivo</th>
+                                                <th>Ação</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td style="width:50px;"><span class="round"><i class="fa fa-thumbs-o-up"></i></span></td>
+                                                <td>
+                                                    <h6>NON 6916</h6><small class="text-muted">L200</small>
+                                                </td>
+                                                <td>2° CGEO</td>
+                                                <td>-</td>
+                                                <td>-</td>
+                                            </tr>
+                                            <tr>
+                                                <td style="width:50px;"><span class="round"><i class="fa fa-thumbs-o-up"></i></span></td>
+                                                <td>
+                                                    <h6>NON NON 7086</h6><small class="text-muted">L200</small>
+                                                </td>
+                                                <td>2° CGEO</td>
+                                                <td>-</td>
+                                                <td>-</td>
+                                            </tr>
+                                            <tr>
+                                                <td style="width:50px;"><span class="round round-danger" ><i class="fa fa-thumbs-o-down"></i></span></td>
+                                                <td>
+                                                    <h6>NON NON 7096</h6><small class="text-muted">L200</small>
+                                                </td>
+                                                <td>2° CGEO</td>
+                                                <td>Problemas mecânicos (motor sem força).</td>
+                                                <td>Passando por revisão em Pedro II. Retornará a base dia 11/10</td>
+                                            </tr>
+                                            <tr>
+                                                <td style="width:50px;"><span class="round"><i class="fa fa-thumbs-o-down"></i></span></td>
+                                                <td>
+                                                    <h6>OYQ 0806</h6><small class="text-muted">L200</small>
+                                                </td>
+                                                <td>2° CGEO</td>
+                                                <td>Problemas mecânicos (embreagem)</td>
+                                                <td>Reparo em andamento na base</td>
+                                            </tr>
+                                            <tr>
+                                                <td style="width:50px;"><span class="round"><i class="fa fa-thumbs-o-up"></i></span></td>
+                                                <td>
+                                                    <h6>PCP 5475</h6><small class="text-muted">L200</small>
+                                                </td>
+                                                <td>3° CGEO</td>
+                                                <td>-</td>
+                                                <td>-</td>
+                                            </tr>
+                                            <tr>
+                                                <td style="width:50px;"><span class="round round-danger"><i class="fa fa-thumbs-o-up"></i></span></td>
+                                                <td>
+                                                    <h6>PCP 5745</h6><small class="text-muted">L200</small>
+                                                </td>
+                                                <td>3° CGEO</td>
+                                                <td>-</td>
+                                                <td>-</td>
+                                            </tr>
+                                            <tr>
+                                                <td style="width:50px;"><span class="round"><i class="fa fa-thumbs-o-up"></i></span></td>
+                                                <td>
+                                                    <h6>RDM5G43</h6><small class="text-muted">Toro</small>
+                                                </td>
+                                                <td>Alugada</td>
+                                                <td>-</td>
+                                                <td>-</td>
+                                            </tr>
+                                            <tr>
+                                                <td style="width:50px;"><span class="round"><i class="fa fa-thumbs-o-up"></i></span></td>
+                                                <td>
+                                                    <h6>RDM3C05</h6><small class="text-muted">Toro</small>
+                                                </td>
+                                                <td>Alugada</td>
+                                                <td>-</td>
+                                                <td>-</td>
+                                            </tr>
+                                            <tr>
+                                                <td style="width:50px;"><span class="round"><i class="fa fa-thumbs-o-up"></i></span></td>
+                                                <td>
+                                                    <h6>RDM1F88</h6><small class="text-muted">Toro</small>
+                                                </td>
+                                                <td>Alugada</td>
+                                                <td>-</td>
+                                                <td>-</td>
+                                            </tr>
+                                            <tr>
+                                                <td style="width:50px;"><span class="round"><i class="fa fa-thumbs-o-up"></i></span></td>
+                                                <td>
+                                                    <h6>RDMG1D27</h6><small class="text-muted">Toro</small>
+                                                </td>
+                                                <td>Alugada</td>
+                                                <td>-</td>
+                                                <td>-</td>
+                                            </tr>
+                                            <tr>
+                                                <td style="width:50px;"><span class="round"><i class="fa fa-thumbs-o-up"></i></span></td>
+                                                <td>
+                                                    <h6>RDM8I61</h6><small class="text-muted">Toro</small>
+                                                </td>
+                                                <td>Alugada</td>
+                                                <td>-</td>
+                                                <td>-</td>
+                                            </tr>
+                                            <tr>
+                                                <td style="width:50px;"><span class="round"><i class="fa fa-thumbs-o-up"></i></span></td>
+                                                <td>
+                                                    <h6>RDG1C72</h6><small class="text-muted">Toro</small>
+                                                </td>
+                                                <td>Alugada</td>
+                                                <td>-</td>
+                                                <td>-</td>
+                                            </tr>
+                                            <tr>
+                                                <td style="width:50px;"><span class="round"><i class="fa fa-thumbs-o-up"></i></span></td>
+                                                <td>
+                                                    <h6>RDM3E80</h6><small class="text-muted">Toro</small>
+                                                </td>
+                                                <td>Alugada</td>
+                                                <td>-</td>
+                                                <td>-</td>
+                                            </tr>
+                                            <tr>
+                                                <td style="width:50px;"><span class="round"><i class="fa fa-thumbs-o-up"></i></span></td>
+                                                <td>
+                                                    <h6>JJU 5141</h6><small class="text-muted">Van Boxer</small>
+                                                </td>
+                                                <td>3° CGEO</td>
+                                                <td>-</td>
+                                                <td>-</td>
+                                            </tr>
+                                            <tr>
+                                                <td style="width:50px;"><span class="round"><i class="fa fa-thumbs-o-up"></i></span></td>
+                                                <td>
+                                                    <h6>KII 4222</h6><small class="text-muted">Van Ducato</small>
+                                                </td>
+                                                <td>2° CGEO</td>
+                                                <td>-</td>
+                                                <td>-</td>
+                                            </tr>
+                                            
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-12 d-flex align-items-stretch">
+                        <div class="card w-100">
+                            <div class="card-body">
+                                <div class="d-flex">
+                                    <div>
+                                        <h5 class="card-title">Semana 01 - 19 a 23 de setembro</h5>
+                                    </div>
+                                    <!-- <div class="ms-auto">
+                                        <select class="form-select b-0">
+                                            <option selected="">January</option>
+                                            <option value="1">February</option>
+                                            <option value="2">March</option>
+                                            <option value="3">April</option>
+                                        </select>
+                                    </div> -->
+                                </div>
+                                <div class="table-responsive mt-3 no-wrap">
+                                    <table class="table vm no-th-brd pro-of-month">
+                                        <thead>
+                                            <tr>
+                                                <th colspan="2">Status</th>
+                                                <th>Pertencimento</th>
+                                                <th>Motivo</th>
+                                                <th>Ação</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td style="width:50px;"><span class="round"><i class="fa fa-thumbs-o-up"></i></span></td>
+                                                <td>
+                                                    <h6>NON 6916</h6><small class="text-muted">L200</small>
+                                                </td>
+                                                <td>2° CGEO</td>
+                                                <td>-</td>
+                                                <td>-</td>
+                                            </tr>
+                                            <tr>
+                                                <td style="width:50px;"><span class="round"><i class="fa fa-thumbs-o-up"></i></span></td>
+                                                <td>
+                                                    <h6>NON NON 7086</h6><small class="text-muted">L200</small>
+                                                </td>
+                                                <td>2° CGEO</td>
+                                                <td>-</td>
+                                                <td>-</td>
+                                            </tr>
+                                            <tr>
+                                                <td style="width:50px;"><span class="round round-danger" ><i class="fa fa-thumbs-o-down"></i></span></td>
+                                                <td>
+                                                    <h6>NON NON 7096</h6><small class="text-muted">L200</small>
+                                                </td>
+                                                <td>2° CGEO</td>
+                                                <td>Problemas mecânicos, embreagem.</td>
+                                                <td>-</td>
+                                            </tr>
+                                            <tr>
+                                                <td style="width:50px;"><span class="round"><i class="fa fa-thumbs-o-up"></i></span></td>
+                                                <td>
+                                                    <h6>OYQ 0806</h6><small class="text-muted">L200</small>
+                                                </td>
+                                                <td>2° CGEO</td>
+                                                <td>-</td>
+                                                <td>-</td>
+                                            </tr>
+                                            <tr>
+                                                <td style="width:50px;"><span class="round"><i class="fa fa-thumbs-o-up"></i></span></td>
+                                                <td>
+                                                    <h6>PCP 5475</h6><small class="text-muted">L200</small>
+                                                </td>
+                                                <td>3° CGEO</td>
+                                                <td>-</td>
+                                                <td>-</td>
+                                            </tr>
+                                            <tr>
+                                                <td style="width:50px;"><span class="round round-danger"><i class="fa fa-thumbs-o-down"></i></span></td>
+                                                <td>
+                                                    <h6>PCP 5745</h6><small class="text-muted">L200</small>
+                                                </td>
+                                                <td>3° CGEO</td>
+                                                <td>Pneus inservíveis, apenas um dos quatro é recuperável.</td>
+                                                <td>-</td>
+                                            </tr>
+                                            <tr>
+                                                <td style="width:50px;"><span class="round"><i class="fa fa-thumbs-o-up"></i></span></td>
+                                                <td>
+                                                    <h6>RDM5G43</h6><small class="text-muted">Toro</small>
+                                                </td>
+                                                <td>Alugada</td>
+                                                <td>-</td>
+                                                <td>-</td>
+                                            </tr>
+                                            <tr>
+                                                <td style="width:50px;"><span class="round"><i class="fa fa-thumbs-o-up"></i></span></td>
+                                                <td>
+                                                    <h6>RDM3C05</h6><small class="text-muted">Toro</small>
+                                                </td>
+                                                <td>Alugada</td>
+                                                <td>-</td>
+                                                <td>-</td>
+                                            </tr>
+                                            <tr>
+                                                <td style="width:50px;"><span class="round"><i class="fa fa-thumbs-o-up"></i></span></td>
+                                                <td>
+                                                    <h6>RDM1F88</h6><small class="text-muted">Toro</small>
+                                                </td>
+                                                <td>Alugada</td>
+                                                <td>-</td>
+                                                <td>-</td>
+                                            </tr>
+                                            <tr>
+                                                <td style="width:50px;"><span class="round"><i class="fa fa-thumbs-o-up"></i></span></td>
+                                                <td>
+                                                    <h6>RDMG1D27</h6><small class="text-muted">Toro</small>
+                                                </td>
+                                                <td>Alugada</td>
+                                                <td>-</td>
+                                                <td>-</td>
+                                            </tr>
+                                            <tr>
+                                                <td style="width:50px;"><span class="round"><i class="fa fa-thumbs-o-up"></i></span></td>
+                                                <td>
+                                                    <h6>RDM8I61</h6><small class="text-muted">Toro</small>
+                                                </td>
+                                                <td>Alugada</td>
+                                                <td>-</td>
+                                                <td>-</td>
+                                            </tr>
+                                            <tr>
+                                                <td style="width:50px;"><span class="round"><i class="fa fa-thumbs-o-up"></i></span></td>
+                                                <td>
+                                                    <h6>RDG1C72</h6><small class="text-muted">Toro</small>
+                                                </td>
+                                                <td>Alugada</td>
+                                                <td>-</td>
+                                                <td>-</td>
+                                            </tr>
+                                            <tr>
+                                                <td style="width:50px;"><span class="round"><i class="fa fa-thumbs-o-up"></i></span></td>
+                                                <td>
+                                                    <h6>RDM3E80</h6><small class="text-muted">Toro</small>
+                                                </td>
+                                                <td>Alugada</td>
+                                                <td>-</td>
+                                                <td>-</td>
+                                            </tr>
+                                            <tr>
+                                                <td style="width:50px;"><span class="round"><i class="fa fa-thumbs-o-up"></i></span></td>
+                                                <td>
+                                                    <h6>JJU 5141</h6><small class="text-muted">Van Boxer</small>
+                                                </td>
+                                                <td>3° CGEO</td>
+                                                <td>-</td>
+                                                <td>-</td>
+                                            </tr>
+                                            <tr>
+                                                <td style="width:50px;"><span class="round"><i class="fa fa-thumbs-o-up"></i></span></td>
+                                                <td>
+                                                    <h6>KII 4222</h6><small class="text-muted">Van Ducato</small>
+                                                </td>
+                                                <td>2° CGEO</td>
+                                                <td>-</td>
+                                                <td>-</td>
+                                            </tr>
+                                            
+                                        </tbody>
+                                    </table>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -187,85 +707,7 @@
                 <!-- ============================================================== -->
                 <!-- End PAge Content -->
                 <!-- ============================================================== -->
-                <!-- ============================================================== -->
-                <!-- Right sidebar -->
-                <!-- ============================================================== -->
-                <!-- .right-sidebar -->
-                <div class="right-sidebar">
-                    <div class="slimscrollright">
-                        <div class="rpanel-title"> Service Panel <span><i class="ti-close right-side-toggle"></i></span>
-                        </div>
-                        <div class="r-panel-body">
-                            <ul id="themecolors" class="mt-3">
-                                <li><b>With Light sidebar</b></li>
-                                <li><a href="javascript:void(0)" data-theme="default" class="default-theme">1</a></li>
-                                <li><a href="javascript:void(0)" data-theme="green" class="green-theme">2</a></li>
-                                <li><a href="javascript:void(0)" data-theme="red" class="red-theme">3</a></li>
-                                <li><a href="javascript:void(0)" data-theme="blue" class="blue-theme">4</a></li>
-                                <li><a href="javascript:void(0)" data-theme="purple" class="purple-theme">5</a></li>
-                                <li><a href="javascript:void(0)" data-theme="megna" class="megna-theme">6</a></li>
-                                <li class="d-block mt-4"><b>With Dark sidebar</b></li>
-                                <li><a href="javascript:void(0)" data-theme="default-dark"
-                                        class="default-dark-theme working">7</a></li>
-                                <li><a href="javascript:void(0)" data-theme="green-dark" class="green-dark-theme">8</a>
-                                </li>
-                                <li><a href="javascript:void(0)" data-theme="red-dark" class="red-dark-theme">9</a></li>
-                                <li><a href="javascript:void(0)" data-theme="blue-dark" class="blue-dark-theme">10</a>
-                                </li>
-                                <li><a href="javascript:void(0)" data-theme="purple-dark"
-                                        class="purple-dark-theme">11</a></li>
-                                <li><a href="javascript:void(0)" data-theme="megna-dark"
-                                        class="megna-dark-theme ">12</a></li>
-                            </ul>
-                            <ul class="mt-3 chatonline">
-                                <li><b>Chat option</b></li>
-                                <li>
-                                    <a href="javascript:void(0)"><img src="../assets/images/users/1.jpg" alt="user-img"
-                                            class="img-circle"> <span>Varun Dhavan <small
-                                                class="text-success">online</small></span></a>
-                                </li>
-                                <li>
-                                    <a href="javascript:void(0)"><img src="../assets/images/users/2.jpg" alt="user-img"
-                                            class="img-circle"> <span>Genelia Deshmukh <small
-                                                class="text-warning">Away</small></span></a>
-                                </li>
-                                <li>
-                                    <a href="javascript:void(0)"><img src="../assets/images/users/3.jpg" alt="user-img"
-                                            class="img-circle"> <span>Ritesh Deshmukh <small
-                                                class="text-danger">Busy</small></span></a>
-                                </li>
-                                <li>
-                                    <a href="javascript:void(0)"><img src="../assets/images/users/4.jpg" alt="user-img"
-                                            class="img-circle"> <span>Arijit Sinh <small
-                                                class="text-muted">Offline</small></span></a>
-                                </li>
-                                <li>
-                                    <a href="javascript:void(0)"><img src="../assets/images/users/5.jpg" alt="user-img"
-                                            class="img-circle"> <span>Govinda Star <small
-                                                class="text-success">online</small></span></a>
-                                </li>
-                                <li>
-                                    <a href="javascript:void(0)"><img src="../assets/images/users/6.jpg" alt="user-img"
-                                            class="img-circle"> <span>John Abraham<small
-                                                class="text-success">online</small></span></a>
-                                </li>
-                                <li>
-                                    <a href="javascript:void(0)"><img src="../assets/images/users/7.jpg" alt="user-img"
-                                            class="img-circle"> <span>Hritik Roshan<small
-                                                class="text-success">online</small></span></a>
-                                </li>
-                                <li>
-                                    <a href="javascript:void(0)"><img src="../assets/images/users/8.jpg" alt="user-img"
-                                            class="img-circle"> <span>Pwandeep rajan <small
-                                                class="text-success">online</small></span></a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <!-- ============================================================== -->
-                <!-- End Right sidebar -->
-                <!-- ============================================================== -->
+
             </div>
             <!-- ============================================================== -->
             <!-- End Container fluid  -->
@@ -300,6 +742,17 @@
     <script src="js/sidebarmenu.js"></script>
     <!--Custom JavaScript -->
     <script src="js/custom.min.js"></script>
+    <!-- ============================================================== -->
+    <!-- This page plugins -->
+    <!-- ============================================================== -->
+    <!--morris JavaScript -->
+    <script src="../assets/node_modules/raphael/raphael-min.js"></script>
+    <script src="../assets/node_modules/morrisjs/morris.min.js"></script>
+    <!--c3 JavaScript -->
+    <script src="../assets/node_modules/d3/d3.min.js"></script>
+    <script src="../assets/node_modules/c3-master/c3.min.js"></script>
+    <!-- Chart JS -->
+    <script src="js/dashboard1.js"></script>
 </body>
 
 </html>
