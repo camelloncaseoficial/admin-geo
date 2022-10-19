@@ -70,7 +70,7 @@ $(function reambulacao() {
             'filter': ['==', 'situacao', 'Em reambulação'],
             'layout': {},
             'paint': {
-                'fill-color': '#4ab3e8',
+                'fill-color': '#24d2b5',
                 'fill-opacity': 0.8,
                 'fill-outline-color': 'rgb(0, 0, 0)'
             }
@@ -85,7 +85,7 @@ $(function reambulacao() {
             'filter': ['==', 'situacao', 'Reambulado'],
             'layout': {},
             'paint': {
-                'fill-color': '#24d2b5',
+                'fill-color': '#4ab3e8',
                 'fill-opacity': 0.8,
                 'fill-outline-color': 'rgb(0, 0, 0)'
             }

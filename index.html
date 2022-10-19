@@ -12,7 +12,6 @@
         content="AdminWrap Lite is powerful and clean admin dashboard template, inpired from Bootstrap Framework">
     <meta name="robots" content="noindex,nofollow">
     <title>AdminGeo Lite</title>
-    <link rel="canonical" href="https://www.wrappixel.com/templates/adminwrap-lite/" />
     <!-- Favicon icon -->
     <link rel="icon" type="image/png" sizes="16x16" href="./assets/images/favicon.png">
     <!-- Bootstrap Core CSS -->
@@ -38,7 +37,6 @@
 <![endif]-->
     <script src="https://cdn.maptiler.com/maplibre-gl-js/v2.4.0/maplibre-gl.js"></script>
     <link href="https://cdn.maptiler.com/maplibre-gl-js/v2.4.0/maplibre-gl.css" rel="stylesheet" />
-    <link href="./html/css/style.css" rel="stylesheet">
     <link href="./html/css/map.css" rel="stylesheet">
 </head>
 
@@ -143,8 +141,14 @@
                         <li> <a class="waves-effect waves-dark" href="./html/fatos-observados.html" aria-expanded="false"><i
                                     class="fa fa-newspaper-o"></i><span class="hide-menu">Fatos observados</span></a>
                         </li>
-                        <li> <a class="waves-effect waves-dark" href="./html/maps.html" aria-expanded="false"><i
-                                    class="fa fa-globe"></i><span class="hide-menu">Mapas</span></a>
+                        <li>
+                            <a class="waves-effect waves-dark dropdown-btn" aria-expanded="false"><i
+                                class="fa fa-globe"></i><span class="hide-menu">Mapas</span><i class="fa fa-caret-down"></i></a>
+                              <div class="dropdown-container">
+                                <a href="./html/maps.html#reambulacao-map">Reambulação</a>
+                                <a href="./html/maps.html#review-map">Revisão</a>
+                                <a href="./html/maps.html#correction-map">Correção</a>
+                              </div>
                         </li>
                         <li> <a class="waves-effect waves-dark" href="./html/suprimento.html" aria-expanded="false"><i
                                     class="fa fa-bookmark-o"></i><span class="hide-menu">Suprimento</span></a>
@@ -158,6 +162,7 @@
             </div>
             <!-- End Sidebar scroll-->
         </aside>
+        
         <!-- ============================================================== -->
         <!-- End Left Sidebar - style you can find in sidebar.scss  -->
         <!-- ============================================================== -->
