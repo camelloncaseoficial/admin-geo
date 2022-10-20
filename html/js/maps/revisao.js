@@ -36,7 +36,7 @@ $(function revisao() {
     map.on('load', function () {
         map.addSource('reambulacao', {
             'type': 'geojson',
-            'data': 'https://api.maptiler.com/data/8287ba8f-4103-4823-9fcb-06c5bbc1fe73/features.json?key=YKUPUUhykPszZbTqzJ2Z'
+            'data': 'https://api.maptiler.com/data/1e0fd0a9-d636-41fc-9035-5a404dddf152/features.json?key=YKUPUUhykPszZbTqzJ2Z'
         });
 
         // Find the id of the first symbol layer in the map style
@@ -147,4 +147,73 @@ $(function revisao() {
         legendValue.innerHTML = REVIEW_STATES[key].name;
 
     });
+
+    // ============================================================== 
+    // Estatísticas
+    // ============================================================== 
+
+    var chart = c3.generate({
+        bindto: '#review-statistics',
+        data: {
+            columns: [
+                ['Previsto', 157],
+                ['A revisar', 16],
+                ['Em revisão', 0],
+                ['Revisado', 77]
+            ],
+
+            type: 'donut',
+            onclick: function (d, i) { console.log("onclick", d, i); },
+            onmouseover: function (d, i) { console.log("onmouseover", d, i); },
+            onmouseout: function (d, i) { console.log("onmouseout", d, i); }
+        },
+        donut: {
+            label: {
+                show: false
+            },
+            title: "Revisão das cartas",
+            width: 20,
+
+        },
+
+        legend: {
+            hide: false
+            //or hide: 'data1'
+            //or hide: ['data1', 'data2']
+        },
+        color: {
+            pattern: ['#eceff1', '#24d2b5', '#6772e5', '#20aee3']
+        }
+    });
+    setTimeout(function () {
+        chart.load({
+            columns: [
+                ['Previsto']
+            ]
+        });
+    }, 1000);
+
+    setTimeout(function () {
+        chart.load({
+            columns: [
+                ['A revisar']
+            ]
+        });
+    }, 2000);
+
+    setTimeout(function () {
+        chart.load({
+            columns: [
+                ['Em revisão']
+            ]
+        });
+    }, 2500);
+
+    setTimeout(function () {
+        chart.load({
+            columns: [
+                ['Revisado']
+            ]
+        });
+    }, 3000);
 })

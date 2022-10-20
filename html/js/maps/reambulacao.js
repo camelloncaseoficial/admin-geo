@@ -35,7 +35,7 @@ $(function reambulacao() {
     map.on('load', function () {
         map.addSource('reambulacao', {
             'type': 'geojson',
-            'data': 'https://api.maptiler.com/data/f9cd1c52-12da-4fc7-856f-cc513cc8ea20/features.json?key=YKUPUUhykPszZbTqzJ2Z'
+            'data': 'https://api.maptiler.com/data/09a7d4d7-e220-4161-87ca-0d0efe4a8850/features.json?key=YKUPUUhykPszZbTqzJ2Z'
         });
 
         // Find the id of the first symbol layer in the map style
@@ -131,4 +131,64 @@ $(function reambulacao() {
         legendValue.innerHTML = REAMBULACAO_STATES[key].name;
 
     });
+
+     // ============================================================== 
+    // Estatísticas
+    // ============================================================== 
+
+    var chart = c3.generate({
+        bindto: '#reambulacao-statistics',
+        data: {
+            columns: [
+                ['Previsto', 116],
+                ['Em reambulação', 56],
+                ['Reambulado', 78]
+            ],
+
+            type: 'donut',
+            onclick: function (d, i) { console.log("onclick", d, i); },
+            onmouseover: function (d, i) { console.log("onmouseover", d, i); },
+            onmouseout: function (d, i) { console.log("onmouseout", d, i); }
+        },
+        donut: {
+            label: {
+                show: false
+            },
+            title: "Reambulação das cartas",
+            width: 20,
+
+        },
+
+        legend: {
+            hide: false
+            //or hide: 'data1'
+            //or hide: ['data1', 'data2']
+        },
+        color: {
+            pattern: ['#eceff1', '#24d2b5', '#6772e5', '#20aee3']
+        }
+    });
+    setTimeout(function () {
+        chart.load({
+            columns: [
+                ['Previsto']
+            ]
+        });
+    }, 1000);
+
+    setTimeout(function () {
+        chart.load({
+            columns: [
+                ['Em reambulação']
+            ]
+        });
+    }, 2000);
+    
+    setTimeout(function () {
+        chart.load({
+            columns: [
+                ['Reambulado']
+            ]
+        });
+    }, 3000);
 })
