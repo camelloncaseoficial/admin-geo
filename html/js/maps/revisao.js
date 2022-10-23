@@ -36,7 +36,7 @@ $(function revisao() {
     map.on('load', function () {
         map.addSource('reambulacao', {
             'type': 'geojson',
-            'data': 'https://api.maptiler.com/data/1e0fd0a9-d636-41fc-9035-5a404dddf152/features.json?key=YKUPUUhykPszZbTqzJ2Z'
+            'data': 'https://api.maptiler.com/data/b8b38a60-52e6-4318-9f72-125b02ccd456/features.json?key=YKUPUUhykPszZbTqzJ2Z'
         });
 
         // Find the id of the first symbol layer in the map style
@@ -115,7 +115,22 @@ $(function revisao() {
         map.on('click', element, function (e) {
             new maplibregl.Popup()
                 .setLngLat(e.lngLat)
-                .setHTML(`<h3>${e.features[0].properties.identificador}</br> situação:</h3><p>${e.features[0].properties.situacao}</p>`)
+                .setHTML(`<h4>${e.features[0].properties.mi}</h4>
+                    <ul class="list-style-none">
+                        <li>
+                            <span class="legend-popup">${e.features[0].properties.situacao}</span>
+                        </li>
+                        <li>
+                            <span class="legend-popup">Operador: 3° Sgt ${e.features[0].properties.operador}</span>
+                        </li>
+                        <li>
+                            <span class="legend-popup">Revisor: ${e.features[0].properties.revisor}</span>
+                        </li>
+                        </li>
+                        <li>
+                            <span class="legend-popup">Semana: ${e.features[0].properties.semana}</span>
+                        </li>
+                    </ul>`)
                 .addTo(map);
         });
 

@@ -5273,6 +5273,11 @@ File: scss
   width: auto;
   font-size: 12px;
 }
+.feeds li .legend-popup {
+  float: left;
+  width: auto;
+  font-size: 12px;
+}
 
 /*******************/
 /*social-profile-first*/

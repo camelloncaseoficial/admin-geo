@@ -35,7 +35,7 @@ $(function reambulacao() {
     map.on('load', function () {
         map.addSource('reambulacao', {
             'type': 'geojson',
-            'data': 'https://api.maptiler.com/data/09a7d4d7-e220-4161-87ca-0d0efe4a8850/features.json?key=YKUPUUhykPszZbTqzJ2Z'
+            'data': 'https://api.maptiler.com/data/ac183429-7da9-411e-becf-5a4d702d14d7/features.json?key=YKUPUUhykPszZbTqzJ2Z'
         });
 
         // Find the id of the first symbol layer in the map style
@@ -99,7 +99,18 @@ $(function reambulacao() {
         map.on('click', element, function (e) {
             new maplibregl.Popup()
                 .setLngLat(e.lngLat)
-                .setHTML(`<h3>${e.features[0].properties.identificador}</br> situação:</h3><p>${e.features[0].properties.situacao}</p>`)
+                .setHTML(`<h4>${e.features[0].properties.mi}</h4>
+                    <ul class="list-style-none">
+                        <li>
+                            <span class="legend-popup">${e.features[0].properties.situacao}</span>
+                        </li>
+                        <li>
+                            <span class="legend-popup">Operador: 3° Sgt ${e.features[0].properties.operador}</span>
+                        </li>
+                        <li>
+                            <span class="legend-popup">Semana: ${e.features[0].properties.semana}</span>
+                        </li>
+                    </ul>`)
                 .addTo(map);
         });
 
