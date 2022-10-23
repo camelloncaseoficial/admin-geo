@@ -146,4 +146,64 @@ $(function correcao() {
         legendValue.innerHTML = REVIEW_STATES[key].name;
 
     });
+
+    // ============================================================== 
+    // Estatísticas
+    // ============================================================== 
+
+    var chart = c3.generate({
+        bindto: '#correction-statistics',
+        data: {
+            columns: [
+                ['Previsto', 189],
+                ['Para correção', 24],
+                ['Finalizado', 37]
+            ],
+
+            type: 'donut',
+            onclick: function (d, i) { console.log("onclick", d, i); },
+            onmouseover: function (d, i) { console.log("onmouseover", d, i); },
+            onmouseout: function (d, i) { console.log("onmouseout", d, i); }
+        },
+        donut: {
+            label: {
+                show: false
+            },
+            title: "Correção das cartas",
+            width: 20,
+
+        },
+
+        legend: {
+            hide: false
+            //or hide: 'data1'
+            //or hide: ['data1', 'data2']
+        },
+        color: {
+            pattern: ['#eceff1', '#24d2b5', '#6772e5', '#20aee3']
+        }
+    });
+    setTimeout(function () {
+        chart.load({
+            columns: [
+                ['Previsto']
+            ]
+        });
+    }, 1000);
+
+    setTimeout(function () {
+        chart.load({
+            columns: [
+                ['Para correção']
+            ]
+        });
+    }, 2000);
+    
+    setTimeout(function () {
+        chart.load({
+            columns: [
+                ['Finalizado']
+            ]
+        });
+    }, 3000);
 })

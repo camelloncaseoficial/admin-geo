@@ -171,10 +171,10 @@ $(function revisao() {
         bindto: '#review-statistics',
         data: {
             columns: [
-                ['Previsto', 157],
+                ['Previsto', 145],
                 ['A revisar', 16],
                 ['Em revisão', 0],
-                ['Revisado', 77]
+                ['Revisado', 89]
             ],
 
             type: 'donut',

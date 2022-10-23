@@ -143,7 +143,7 @@ $(function reambulacao() {
 
     });
 
-     // ============================================================== 
+    // ============================================================== 
     // Estatísticas
     // ============================================================== 
 
@@ -151,9 +151,9 @@ $(function reambulacao() {
         bindto: '#reambulacao-statistics',
         data: {
             columns: [
-                ['Previsto', 116],
-                ['Em reambulação', 56],
-                ['Reambulado', 78]
+                ['Previsto', 111],
+                ['Em reambulação', 34],
+                ['Reambulado', 105]
             ],
 
             type: 'donut',
