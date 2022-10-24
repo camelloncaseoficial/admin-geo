@@ -1,15 +1,15 @@
 $(function correcao() {
     "use strict";
 
-    const CORRECTION_STATES = [
-        { id: 'IdAcorrigir', name: 'A corrigir', color: '#24d2b5' },
-        { id: 'IdFinalizado', name: 'Finalizado', color: '#4ab3e8' }
+    const CONTROL_POINT_STATES = [
+        { id: 'IdRastreado', name: 'Rastreado', color: '#24d2b5' },
+        { id: 'IdProcessado', name: 'Processado', color: '#4ab3e8' }
     ]
 
     const urlParams = new URLSearchParams(window.location.search);
     const key = urlParams.get('key') || 'YKUPUUhykPszZbTqzJ2Z';
     const map = new maplibregl.Map({
-        container: 'correction-map', // container id
+        container: 'control-points-map', // container id
         style: `https://api.maptiler.com/maps/streets/style.json?key=${key}`, // style URL
         center: [-41.177214147282676, -4.352697289140384],
         zoom: 7.2
@@ -33,10 +33,13 @@ $(function correcao() {
     map.addControl(new maplibregl.NavigationControl(), 'top-right');
 
     map.on('load', function () {
-        map.addSource('reambulacao', {
+
+        map.addSource('control_points', {
             'type': 'geojson',
-            'data': 'https://api.maptiler.com/data/b9ed31b5-fa39-4282-8b9c-c8d16a826c7d/features.json?key=YKUPUUhykPszZbTqzJ2Z'
+            'data': 'https://api.maptiler.com/data/9d3e5f41-129a-4bcc-a769-1c58fff31ee8/features.json?key=YKUPUUhykPszZbTqzJ2Z'
         });
+
+                   
 
         // Find the id of the first symbol layer in the map style
         const layers = map.getStyle().layers;
@@ -50,51 +53,33 @@ $(function correcao() {
 
         map.addLayer({
             'id': 'IDprevisto',
-            'source': 'reambulacao',
-            'type': 'fill',
-            'filter': ['==', 'situacao', 'Previsto'],
-            'layout': {},
+            'source': 'control_points',
+            'filter': ['==', 'rastreado', 'Sim'],
+            'type': 'circle',
             'paint': {
-                'fill-color': 'rgb(255, 255, 255)',
-                'fill-opacity': 0.6,
-                'fill-outline-color': 'rgb(0, 0, 0)'
+                'circle-radius': 3,
+                'circle-color': '#B42222'
             }
         },
             firstSymbolId
         );
 
         map.addLayer({
-            'id': 'IDacorrigir',
-            'source': 'reambulacao',
-            'type': 'fill',
-            'filter': ['==', 'situacao', 'Para correção'],
-            'layout': {},
+            'id': 'IDprevisto',
+            'source': 'control_points',
+            'filter': ['==', 'processado', 'Sim'],
+            'type': 'circle',
             'paint': {
-                'fill-color': '#24d2b5',
-                'fill-opacity': 0.8,
-                'fill-outline-color': 'rgb(0, 0, 0)'
+                'circle-radius': 3,
+                'circle-color': '#24d2b5'
             }
         },
             firstSymbolId
         );
 
-        map.addLayer({
-            'id': 'IDfinalizado',
-            'source': 'reambulacao',
-            'type': 'fill',
-            'filter': ['==', 'situacao', 'Finalizado'],
-            'layout': {},
-            'paint': {
-                'fill-color': '#4ab3e8',
-                'fill-opacity': 0.8,
-                'fill-outline-color': 'rgb(0, 0, 0)'
-            }
-        },
-            firstSymbolId
-        );
     });
 
-    const situationList = ['IDacorrigir', 'IDfinalizado']
+    const situationList = ['IdRastreado', 'IDfinalizado']
     situationList.forEach(element => {
         map.on('click', element, function (e) {
             new maplibregl.Popup()
@@ -127,23 +112,23 @@ $(function correcao() {
         throw new Error("To load the map, you must replace YOUR_MAPTILER_API_KEY_HERE first");
     });
 
-    document.getElementById('correction-fit-view').addEventListener('click', () => {
+    document.getElementById('control-point-fit-view').addEventListener('click', () => {
         map.fitBounds([
             [-40.812316352728544, -3.207958748373542], // southwestern corner of the bounds
             [-41.56389239809622, -5.5000499778977465] // northeastern corner of the bounds
         ]);
     });
 
-    let legendElement = document.getElementById('correction-legend');
+    let legendElement = document.getElementById('control-point-legend');
 
-    Object.keys(CORRECTION_STATES).forEach(key => {
+    Object.keys(CONTROL_POINT_STATES).forEach(key => {
 
         var legendItem = createHtmlElement('div', legendElement);
         var legendKey = createHtmlElement('span', legendItem);
         var legendValue = createHtmlElement('h7', legendItem);
 
-        legendKey.style.backgroundColor = CORRECTION_STATES[key].color;
-        legendValue.innerHTML = CORRECTION_STATES[key].name;
+        legendKey.style.backgroundColor = CONTROL_POINT_STATES[key].color;
+        legendValue.innerHTML = CONTROL_POINT_STATES[key].name;
 
     });
 
@@ -156,8 +141,8 @@ $(function correcao() {
         data: {
             columns: [
                 ['Previsto', 189],
-                ['Para correção', 24],
-                ['Finalizado', 37]
+                ['Rastreado', 24],
+                ['Processado', 37]
             ],
 
             type: 'donut',
@@ -169,7 +154,7 @@ $(function correcao() {
             label: {
                 show: false
             },
-            title: "Correção das cartas",
+            title: "Pontos de Controle",
             width: 20,
 
         },
@@ -194,7 +179,7 @@ $(function correcao() {
     setTimeout(function () {
         chart.load({
             columns: [
-                ['Para correção']
+                ['Rastreado']
             ]
         });
     }, 2000);
@@ -202,7 +187,7 @@ $(function correcao() {
     setTimeout(function () {
         chart.load({
             columns: [
-                ['Finalizado']
+                ['Processado']
             ]
         });
     }, 3000);
