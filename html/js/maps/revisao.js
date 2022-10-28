@@ -36,7 +36,7 @@ $(function revisao() {
     map.on('load', function () {
         map.addSource('reambulacao', {
             'type': 'geojson',
-            'data': 'https://api.maptiler.com/data/b8b38a60-52e6-4318-9f72-125b02ccd456/features.json?key=YKUPUUhykPszZbTqzJ2Z'
+            'data': 'https://api.maptiler.com/data/b4dba001-717a-47b0-b1bc-d0079ec6f311/features.json?key=YKUPUUhykPszZbTqzJ2Z'
         });
 
         // Find the id of the first symbol layer in the map style

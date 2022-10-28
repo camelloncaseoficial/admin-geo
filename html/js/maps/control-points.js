@@ -52,7 +52,7 @@ $(function correcao() {
         }
 
         map.addLayer({
-            'id': 'IDprevisto',
+            'id': 'IDrastreado',
             'source': 'control_points',
             'filter': ['==', 'rastreado', 'Sim'],
             'type': 'circle',
@@ -65,7 +65,7 @@ $(function correcao() {
         );
 
         map.addLayer({
-            'id': 'IDprevisto',
+            'id': 'IDprocessado',
             'source': 'control_points',
             'filter': ['==', 'processado', 'Sim'],
             'type': 'circle',
@@ -79,7 +79,7 @@ $(function correcao() {
 
     });
 
-    const situationList = ['IdRastreado', 'IDfinalizado']
+    const situationList = ['IDrastreado', 'IDprocessado']
     situationList.forEach(element => {
         map.on('click', element, function (e) {
             new maplibregl.Popup()
@@ -137,7 +137,7 @@ $(function correcao() {
     // ============================================================== 
 
     var chart = c3.generate({
-        bindto: '#correction-statistics',
+        bindto: '#control-point-statistics',
         data: {
             columns: [
                 ['Previsto', 189],
