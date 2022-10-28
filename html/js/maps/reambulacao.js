@@ -151,9 +151,9 @@ $(function reambulacao() {
         bindto: '#reambulacao-statistics',
         data: {
             columns: [
-                ['Previsto', 111],
-                ['Em reambulação', 34],
-                ['Reambulado', 105]
+                ['Previsto', 90],
+                ['Em reambulação', 21],
+                ['Reambulado', 139]
             ],
 
             type: 'donut',

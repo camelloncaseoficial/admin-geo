@@ -156,8 +156,8 @@ $(function correcao() {
         data: {
             columns: [
                 ['Previsto', 189],
-                ['Para correção', 24],
-                ['Finalizado', 37]
+                ['Para correção', 12],
+                ['Finalizado', 49]
             ],
 
             type: 'donut',
